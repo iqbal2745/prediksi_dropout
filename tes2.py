@@ -6,7 +6,7 @@ import plotly.express as px
 import joblib
 
 st.title("Dashboard")
-st.subheader("Visualisasi untuk Student Dropout Analysis")
+st.subheader("Student Dropout Analysis")
 
 # load data
 df_1 = pd.read_csv('data.csv', sep=';')
