@@ -17,64 +17,11 @@ st.sidebar.title("📊 Menu Visualisasi")
 menu = st.sidebar.radio("Pilih Visualisasi:", [
     "Komposisi Status Mahasiswa",
     "Korelasi terhadap Status",
-    "Koefisien Model"
+    "Koefisien Model",
+    "PREDICTOR"
 ])
 
-if st.sidebar.button("Predictor"):
-    st.subheader("🧠 Prediksi Dropout Mahasiswa")
 
-    # Load pipeline yang sudah kamu simpan
-    model_pipeline = joblib.load("model_dropout.joblib")
-
-    # Mapping nama mode pendaftaran ke angka (sesuai data latih)
-
-    mode_mapping= {
-        'general_phase_contingent':1,
-        'general_phase_contingent':17,
-        'over_23_years':39,
-        'technological_specialization_diploma':44,
-        'change_of_course':43,
-        'holders_of_higher_course':7,
-        'Other': 99
-    }
-    # Judul Aplikasi
-    st.title("Student Dropout Predictor")
-
-    # Input Fitur
-    age = st.number_input("Umur saat mendaftar", min_value=15, max_value=80, value=20)
-    application_mode_str = st.selectbox("Jalur Pendaftaran", list(mode_mapping.keys()))
-    application_mode = mode_mapping[application_mode_str]
-    avg_sem_approved = st.number_input("Rata-rata Unit Disetujui", min_value=0.0, value=5.0)
-    avg_sem_grade = st.number_input("Rata-rata Nilai Semester", min_value=0.0, value=12.0)
-    avg_sem_without_eval = st.number_input("Rata-rata Unit Tanpa Evaluasi", min_value=0.0, value=0.0)
-
-    gender = st.selectbox("Jenis Kelamin", ["Male", "Female"])
-    debtor = st.selectbox("Status Hutang", ["Has Debt", "No Debt"])
-    scholarship = st.selectbox("Beasiswa", ["Has Scholarship", "No Scholarship"])
-    tuition = st.selectbox("Pembayaran Biaya Tepat Waktu", ["Yes", "No"])
-
-    # Buat DataFrame input
-    input_df = pd.DataFrame({
-    "Age_at_enrollment": [age],
-    "Application_mode": [application_mode],
-    "avg_sem_approved": [avg_sem_approved],
-    "avg_sem_grade": [avg_sem_grade],
-    "avg_sem_without_evaluation": [avg_sem_without_eval],
-    "Gender": [gender],
-    "Debtor": [debtor],
-    "Scholarship_holder": [scholarship],
-    "Tuition_fees_up_to_date": [tuition]
-    })
-
-    # Tombol Prediksi
-    if st.button("Prediksi"):
-        prediction = model_pipeline.predict(input_df)[0]
-        probability = model_pipeline.predict_proba(input_df)[0]
-
-        st.write("### Hasil Prediksi:")
-        st.write(f"*Status:* {prediction}")
-        st.write(f"*Probabilitas Dropout:* {round(probability[0]*100, 2)}%")
-        st.write(f"*Probabilitas Lulus:* {round(probability[1]*100, 2)}%")
 
 # === Tampilan Tengah Berdasarkan Menu ===
 
@@ -158,3 +105,59 @@ elif menu == "Koefisien Model":
         • Koefisien positif → menaikkan peluang mahasiswa lulus atau Graduate  
         • Koefisien negatif → menurunkan peluang mahasiswa lulus, artinya cenderung ke Dropout
         """)
+
+elif menu == "PREDICTOR":
+    st.subheader("🧠 Prediksi Dropout Mahasiswa")
+
+    # Load pipeline yang sudah kamu simpan
+    model_pipeline = joblib.load("model_dropout.joblib")
+
+    # Mapping nama mode pendaftaran ke angka (sesuai data latih)
+
+    mode_mapping= {
+        'general_phase_contingent':1,
+        'general_phase_contingent':17,
+        'over_23_years':39,
+        'technological_specialization_diploma':44,
+        'change_of_course':43,
+        'holders_of_higher_course':7,
+        'Other': 99
+    }
+    # Judul Aplikasi
+    st.title("Student Dropout Predictor")
+
+    # Input Fitur
+    age = st.number_input("Umur saat mendaftar", min_value=15, max_value=80, value=20)
+    application_mode_str = st.selectbox("Jalur Pendaftaran", list(mode_mapping.keys()))
+    application_mode = mode_mapping[application_mode_str]
+    avg_sem_approved = st.number_input("Rata-rata Unit Disetujui", min_value=0.0, value=5.0)
+    avg_sem_grade = st.number_input("Rata-rata Nilai Semester", min_value=0.0, value=12.0)
+    avg_sem_without_eval = st.number_input("Rata-rata Unit Tanpa Evaluasi", min_value=0.0, value=0.0)
+
+    gender = st.selectbox("Jenis Kelamin", ["Male", "Female"])
+    debtor = st.selectbox("Status Hutang", ["Has Debt", "No Debt"])
+    scholarship = st.selectbox("Beasiswa", ["Has Scholarship", "No Scholarship"])
+    tuition = st.selectbox("Pembayaran Biaya Tepat Waktu", ["Yes", "No"])
+
+    # Buat DataFrame input
+    input_df = pd.DataFrame({
+    "Age_at_enrollment": [age],
+    "Application_mode": [application_mode],
+    "avg_sem_approved": [avg_sem_approved],
+    "avg_sem_grade": [avg_sem_grade],
+    "avg_sem_without_evaluation": [avg_sem_without_eval],
+    "Gender": [gender],
+    "Debtor": [debtor],
+    "Scholarship_holder": [scholarship],
+    "Tuition_fees_up_to_date": [tuition]
+    })
+
+    # Tombol Prediksi
+    if st.button("Prediksi"):
+        prediction = model_pipeline.predict(input_df)[0]
+        probability = model_pipeline.predict_proba(input_df)[0]
+
+        st.write("### Hasil Prediksi:")
+        st.write(f"*Status:* {prediction}")
+        st.write(f"*Probabilitas Dropout:* {round(probability[0]*100, 2)}%")
+        st.write(f"*Probabilitas Lulus:* {round(probability[1]*100, 2)}%")
