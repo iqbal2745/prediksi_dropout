@@ -1,0 +1,14 @@
+Feature,Coefficient
+avg_sem_approved,1.4042940965698312
+Tuition_fees_up_to_date_Yes,1.208488996001011
+Scholarship_holder_Has Scholarship,0.4747244382862873
+avg_sem_grade,0.4086057374976985
+Debtor_No Debt,0.40084547430720685
+Gender_Female,0.0924939391485122
+avg_sem_without_evaluation,-0.14102169192229325
+Age_at_enrollment,-0.1996186516994583
+Gender_Male,-0.2943220221863122
+Application_mode,-0.3591199218794747
+Debtor_Has Debt,-0.6026735573450058
+Scholarship_holder_No Scholarship,-0.6765525213240875
+Tuition_fees_up_to_date_No,-1.4103170790388035
