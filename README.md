@@ -29,16 +29,16 @@ env\Scripts\activate           # Untuk Windows
 - Install semua dependensi dari requirements.txt
 pip install -r requirements.txt
 
-imbalanced_learn==0.13.0
-joblib==1.5.1
-matplotlib==3.8.4
-numpy==1.26.4
-pandas==2.3.0
-protobuf==6.31.1
-scikit-learn==1.7.0
-seaborn==0.13.2
-plotly==5.22.0
-streamlit==1.34.0
+imbalanced_learn==0.13.0  
+joblib==1.5.1  
+matplotlib==3.8.4  
+numpy==1.26.4  
+pandas==2.3.0  
+protobuf==6.31.1  
+scikit-learn==1.7.0  
+seaborn==0.13.2  
+plotly==5.22.0  
+streamlit==1.34.0  
 
 ## Business Dashboard
 Dashboard interaktif dibangun menggunakan Streamlit dan terdiri dari dua komponen utama:
