@@ -94,11 +94,11 @@ Faktor yang Meningkatkan Risiko Dropout (koefisien negatif)
 •	avg_sem_without_evaluation (−0.14): Banyaknya mata kuliah tanpa evaluasi (mungkin karena tidak hadir atau tidak ikut ujian) menunjukkan risiko dropout.  
 
 ## rekomendasi action times
-Akademik & Evaluasi
-•	Intervensi akademik untuk mahasiswa dengan jumlah mata kuliah gagal/ditinggalkan tinggi (avg_sem_approved & avg_sem_without_evaluation).
-•	Program bimbingan belajar atau remedial untuk mereka yang memiliki nilai rata-rata rendah
-Keuangan
-•	Monitor mahasiswa yang menunggak pembayaran (Tuition_fees_up_to_date_No) agar bisa ditindaklanjuti .
-•	Perluas akses beasiswa untuk mahasiswa dari latar belakang ekonomi rentan (Scholarship_holder_No Scholarship). Dengan bekerja sama dengan donatur atau CSR perusahaan atau pemerintah untuk membiayai mahasiswa yang memiliki kendala financial
-•	Program restrukturisasi atau penjadwalan utang mahasiswa bagi yang terdeteksi sebagai Debtor_Has Debt.
+Akademik & Evaluasi  
+•	Intervensi akademik untuk mahasiswa dengan jumlah mata kuliah gagal/ditinggalkan tinggi (avg_sem_approved & avg_sem_without_evaluation).  
+•	Program bimbingan belajar atau remedial untuk mereka yang memiliki nilai rata-rata rendah  
+Keuangan  
+•	Monitor mahasiswa yang menunggak pembayaran (Tuition_fees_up_to_date_No) agar bisa ditindaklanjuti .  
+•	Perluas akses beasiswa untuk mahasiswa dari latar belakang ekonomi rentan (Scholarship_holder_No Scholarship). Dengan bekerja sama dengan donatur atau CSR perusahaan atau pemerintah untuk membiayai mahasiswa yang memiliki kendala financial  
+•	Program restrukturisasi atau penjadwalan utang mahasiswa bagi yang terdeteksi sebagai Debtor_Has Debt.  
 
