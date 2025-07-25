@@ -77,21 +77,21 @@ Koefisien positif = meningkatkan kemungkinan tidak dropout (lulus)
 Koefisien negatif = meningkatkan kemungkinan dropout
 
 Faktor yang Mengurangi Risiko Dropout (koefisien positif):
-•	avg_sem_approved (+1.40): Semakin banyak mata kuliah yang disetujui/berhasil dilalui, semakin kecil kemungkinan dropout.
-•	Tuition_fees_up_to_date_Yes (+1.21): Mahasiswa yang rutin membayar SPP kuliah tepat waktu cenderung tidak dropout.
-•	Scholarship_holder_Has Scholarship (+0.47): Penerima beasiswa lebih cenderung menyelesaikan kuliah atau graduate.
-•	avg_sem_grade (+0.41): Nilai rata-rata yang tinggi juga menunjukkan kecenderungan untuk tetap kuliah dan graduate.
-•	Debtor_No Debt (+0.40): Mahasiswa yang tidak memiliki utang atau mungkin uang kuliah yang berasal dari hutang berkorelasi dengan keberlanjutan studi hingga graduate.
-•	Gender_Female (+0.09): Mahasiswa perempuan cenderung lebih bertahan dibanding laki-laki.
+•	avg_sem_approved (+1.40): Semakin banyak mata kuliah yang disetujui/berhasil dilalui, semakin kecil kemungkinan dropout.  
+•	Tuition_fees_up_to_date_Yes (+1.21): Mahasiswa yang rutin membayar SPP kuliah tepat waktu cenderung tidak dropout.  
+•	Scholarship_holder_Has Scholarship (+0.47): Penerima beasiswa lebih cenderung menyelesaikan kuliah atau graduate.  
+•	avg_sem_grade (+0.41): Nilai rata-rata yang tinggi juga menunjukkan kecenderungan untuk tetap kuliah dan graduate.  
+•	Debtor_No Debt (+0.40): Mahasiswa yang tidak memiliki utang atau mungkin uang kuliah yang berasal dari hutang berkorelasi dengan keberlanjutan studi hingga graduate.  
+•	Gender_Female (+0.09): Mahasiswa perempuan cenderung lebih bertahan dibanding laki-laki.  
 
-Faktor yang Meningkatkan Risiko Dropout (koefisien negatif)
-•	Tuition_fees_up_to_date_No (−1.41): Mahasiswa yang tidak membayar SPP kuliah sangat berisiko tinggi dropout.
-•	Scholarship_holder_No Scholarship (−0.67): Mahasiswa tanpa beasiswa memiliki rasio dropout lebih besar
-•	Debtor_Has Debt (−0.60): Mahasiswa yang memiliki utang menunjukkan kecenderungan dropout.
-•	Application_mode (−0.36): Mode aplikasi tertentu (mungkin jalur tidak reguler) berisiko lebih tinggi dropout.  
-•	Gender_Male (−0.29): Mahasiswa laki-laki lebih cenderung dropout.
-•	Age_at_enrollment (−0.20): Semakin tua usia masuk, semakin tinggi potensi dropout.
-•	avg_sem_without_evaluation (−0.14): Banyaknya mata kuliah tanpa evaluasi (mungkin karena tidak hadir atau tidak ikut ujian) menunjukkan risiko dropout.
+Faktor yang Meningkatkan Risiko Dropout (koefisien negatif)  
+•	Tuition_fees_up_to_date_No (−1.41): Mahasiswa yang tidak membayar SPP kuliah sangat berisiko tinggi dropout.  
+•	Scholarship_holder_No Scholarship (−0.67): Mahasiswa tanpa beasiswa memiliki rasio dropout lebih besar  
+•	Debtor_Has Debt (−0.60): Mahasiswa yang memiliki utang menunjukkan kecenderungan dropout.  
+•	Application_mode (−0.36): Mode aplikasi tertentu (mungkin jalur tidak reguler) berisiko lebih tinggi dropout.     
+•	Gender_Male (−0.29): Mahasiswa laki-laki lebih cenderung dropout.  
+•	Age_at_enrollment (−0.20): Semakin tua usia masuk, semakin tinggi potensi dropout.  
+•	avg_sem_without_evaluation (−0.14): Banyaknya mata kuliah tanpa evaluasi (mungkin karena tidak hadir atau tidak ikut ujian) menunjukkan risiko dropout.  
 
 ## rekomendasi action times
 Akademik & Evaluasi
