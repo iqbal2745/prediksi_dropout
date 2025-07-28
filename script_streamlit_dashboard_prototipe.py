@@ -18,6 +18,7 @@ menu = st.sidebar.radio("Pilih Visualisasi:", [
     "Komposisi Status Mahasiswa",
     "Korelasi terhadap Status",
     "Koefisien Model",
+    "Kesimpulan & Rekomendasi",
     "PREDICTOR"
 ])
 
@@ -106,6 +107,53 @@ elif menu == "Koefisien Model":
         • Koefisien negatif → menurunkan peluang mahasiswa lulus, artinya cenderung ke Dropout
         """)
 
+elif menu == "Kesimpulan & Rekomendasi":
+    st.subheader("📦 kesimpulan dan rekomendasi berdasarkan data")
+
+    with st.expander("strategi"):
+        st.markdown("""
+        • Fitur dengan Koefisien Positif (menurunkan risiko dropout)    
+          Berarti fitur ini mengurangi kemungkinan dropout.  
+          Strategi: diperkuat atau ditingkatkan.  
+        • Fitur dengan Koefisien Negatif (meningkatkan risiko dropout).  
+          Berarti fitur ini meningkatkan kemungkinan dropout. Strategi: dicegah atau ditangani.  
+        """)
+
+    
+    with st.expander("kesimpulan"):
+        st.write("""
+    Faktor yang Mengurangi Risiko Dropout (koefisien positif):  
+    •	avg_sem_approved (+1.40): Semakin banyak mata kuliah yang disetujui/berhasil dilalui, semakin kecil kemungkinan dropout.  
+    •	Tuition_fees_up_to_date_Yes (+1.21): Mahasiswa yang rutin membayar SPP kuliah tepat waktu cenderung tidak dropout.  
+    •	Scholarship_holder_Has Scholarship (+0.47): Penerima beasiswa lebih cenderung menyelesaikan kuliah atau graduate.  
+    •	avg_sem_grade (+0.41): Nilai rata-rata yang tinggi juga menunjukkan kecenderungan untuk tetap kuliah dan graduate.  
+    •	Debtor_No Debt (+0.40): Mahasiswa yang tidak memiliki utang atau mungkin uang kuliah yang berasal dari hutang berkorelasi dengan keberlanjutan studi hingga graduate.  
+    •	Gender_Female (+0.09): Mahasiswa perempuan cenderung lebih bertahan dibanding laki-laki.  
+
+    Faktor yang Meningkatkan Risiko Dropout (koefisien negatif)  
+    •	Tuition_fees_up_to_date_No (−1.41): Mahasiswa yang tidak membayar SPP kuliah sangat berisiko tinggi dropout.  
+    •	Scholarship_holder_No Scholarship (−0.67): Mahasiswa tanpa beasiswa memiliki rasio dropout lebih besar.  
+    •	Debtor_Has Debt (−0.60): Mahasiswa yang memiliki utang menunjukkan kecenderungan dropout.  
+    •	Application_mode (−0.36): Mode aplikasi tertentu (mungkin jalur tidak reguler) berisiko lebih tinggi dropout.    
+    •	Gender_Male (−0.29): Mahasiswa laki-laki lebih cenderung dropout.  
+    •	Age_at_enrollment (−0.20): Semakin tua usia masuk, semakin tinggi potensi dropout.  
+    •	avg_sem_without_evaluation (−0.14): Banyaknya mata kuliah tanpa evaluasi (mungkin karena tidak hadir atau tidak ikut ujian) menunjukkan risiko dropout.  
+        """)
+
+    with st.expander("rekomendasi"):
+        st.write("""
+        •	Institusi dapat mengambil tidakan seperti adanya program remedial agar mahasiswa dapat memperbaiki nilai, program mentoring akademik yang bentuknya dapat disesuaikan sebagai sarana yang dapat digunakan untuk bisa lebih memahami pelajarannya.
+        •	Institusi dapat menawarkan skema cicilan pembayaran, discount bila pelunasan di awal ataupun reminder pada mahasiswa yang telat  melakukan pembayaran.  
+        •	Untuk mahasiswa yang sudah mengalami keterlambatan pembayaran institusi dapat  memberikan program bantuan finansial atau renegosiasi pembayaran.
+        •	institusi dapat memperluas beasiswa terutama kepada mahasisa yang berisiko tinggi dropout. institusi juga bisa mencari donatur atau perusahaan yang berminat melakukan CSR dengan bantuan kepada mahasiswa yang beresiko.  
+        •	Tambahkan kuota beasiswa bagi mahasiswa yang memiliki resiko tinggi atau yang menunjukkan kemajuan akademik.  sehingga lebih banyak mahasiswa yang mendapatkan beasiswa sehingga memperkecil potensi dropout
+        •	institusi dapat memberikan seminar belajar efektif, bimbingan belajar , meningkatkan kualitas pengajar dan sarana agar proses belajar mengajar lebih berkualitas sehingga dapat meningkatkan nilai mahasiswa.  
+        •	Hutang  berkaitan dengan pembayaran uang kuliah tepat waktu dan beasiswa, mahasiswa berbeasiswa yang bisa menentukan hutang mahasiswa. skema cicilan pembayaran dan perluasan cakupan beasiswa dapat mengurangi tingkat dropout
+        •	Sediakan layanan konseling keuangan mencari donatur negeri ataupun swasta.  
+        •	Menawarkan kelas kuliah flexible baik pilihan waktu dan kelas pembelajaran online. Membuat forum dengan melibatkan almamater untuk medapatnya informasi mengenai tantangan dan kendala yang dihadapi mahasiswa laki laki dan berusia diatas 23 tahun dalam perkuliahannya sehingga dapat diberikan solusinya.
+        •	Application mode. Perluas jalur masuk melalui jalur seleksi umum yang memiliki otensi graduate yang paling besar. Untuk meningkatkan jumlah mahasiswa yang graduate
+        """)
+        
 elif menu == "PREDICTOR":
     st.subheader("🧠 Prediksi Dropout Mahasiswa")
 
